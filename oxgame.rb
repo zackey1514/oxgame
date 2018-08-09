@@ -24,15 +24,15 @@ def put?(s)
 end
 
 def winner?
-return true if $ary[0] == $ary[3] && $ary[0] == $ary[6]
-return true if $ary[1] == $ary[4] && $ary[1] == $ary[7]
-return true if $ary[2] == $ary[5] && $ary[0] == $ary[8]
-return true if $ary[0] == $ary[1] && $ary[0] == $ary[2]
-return true if $ary[3] == $ary[4] && $ary[0] == $ary[5]
-return true if $ary[6] == $ary[7] && $ary[0] == $ary[8]
-return true if $ary[0] == $ary[4] && $ary[0] == $ary[8]
-return true if $ary[2] == $ary[4] && $ary[0] == $ary[6]
-return false
+  return true if $ary[0] == $ary[3] && $ary[0] == $ary[6]
+  return true if $ary[1] == $ary[4] && $ary[1] == $ary[7]
+  return true if $ary[2] == $ary[5] && $ary[0] == $ary[8]
+  return true if $ary[0] == $ary[1] && $ary[0] == $ary[2]
+  return true if $ary[3] == $ary[4] && $ary[0] == $ary[5]
+  return true if $ary[6] == $ary[7] && $ary[0] == $ary[8]
+  return true if $ary[0] == $ary[4] && $ary[0] == $ary[8]
+  return true if $ary[2] == $ary[4] && $ary[0] == $ary[6]
+  return false
 end
 
 $ary = (1..9).to_a
