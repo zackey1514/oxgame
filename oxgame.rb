@@ -6,8 +6,9 @@ def display_board
 end
 
 def put_mark(s, ox)
-	if s.class == Integer && s >= 1 && put?(s)
+	if s >= 1 && s <= 9 && put?(s)
 		$ary[s-1] = ox
+		$finish_marker += 1
 	else
 		puts "エラー"
 		$i += 1
@@ -36,19 +37,23 @@ end
 
 $ary = (1..9).to_a
 $i = 0
+$finish_marker = 0
 s = ""
 
 while s != "q\n"
 	j = $i % 2
 	ox = j == 0 ? "o" : "x"
 	display_board
-	print "#{ox}:１〜９の整数を入力してください "
+	print "#{ox}: 1-9の整数を入力してください "
 	s = gets.to_i
 	put_mark(s, ox)
-
 	if winner?
 		display_board
 		puts "winner: #{ox}"
+		break
+	elsif $finish_marker >= 9
+		display_board
+		puts "draw"
 		break
 	end
 	$i += 1
